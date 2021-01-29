@@ -16,7 +16,7 @@ def AtmLight(im,dark):
     darkvec = dark.reshape(imsz);
     imvec = im.reshape(imsz,3);
 
-    indices = darkvec.argsort();
+    indices = np.argsort(darkvec,axis=0);
     indices = indices[imsz-numpx::]
 
     atmsum = np.zeros([1,3])
